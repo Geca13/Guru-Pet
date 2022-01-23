@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pet Clinic</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  
+  <h1 th:text="'Owners Index Page'"></h1>
+  
+  <table>
+   <thead>
+    <tr>
+     <td>Id</td>
+     <td>First Name</td>
+     <td>Last Name</td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr th:each="owner: ${owners}">
+     <td th:text="${owner?.id}"></td>
+     <td th:text="${owner?.firstName}"></td>
+     <td th:text="${owner?.lastName}"></td>
+    </tr>
+   </tbody>
+  
+  </table>
+	
+  </body>
+</html>
