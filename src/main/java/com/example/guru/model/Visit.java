@@ -1,7 +1,6 @@
 package com.example.guru.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Vet extends Person {
+public class Visit extends BaseEntety {
+	
+	private LocalDate date;
+	
+	private Pet pet;
+	
+	private String description;
 
-	private Set<Speciality> specialities = new HashSet<>();
 }
