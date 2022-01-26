@@ -2,12 +2,14 @@ package com.example.guru.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.example.guru.model.Speciality;
 import com.example.guru.services.SpecialityService;
 
 @Service
+@Profile({"default", "map"})
 public class SpecialitiesMapService extends AbstractMapService<Speciality, Long> implements SpecialityService{
 
 	@Override

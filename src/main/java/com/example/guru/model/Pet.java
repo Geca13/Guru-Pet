@@ -12,8 +12,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.example.guru.model.Owner.OwnerBuilder;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntety {
@@ -34,10 +46,6 @@ public class Pet extends BaseEntety {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
 	private Set<Visit> visits = new HashSet<>();
 
-	
-	public Pet() {
-		super();
-	}
 
 	public Pet(PetType petType, Owner owner, String name, LocalDate birthDate) {
 		super();
@@ -47,47 +55,6 @@ public class Pet extends BaseEntety {
 		this.birthDate = birthDate;
 	}
 
-	public PetType getPetType() {
-		return petType;
-	}
-
-	public void setPetType(PetType petType) {
-		this.petType = petType;
-	}
-
-	public Owner getOwner() {
-		return Owner;
-	}
-
-	public void setOwner(Owner owner) {
-		Owner = owner;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
-
-	public Set<Visit> getVisits() {
-		return visits;
-	}
-
-	public void setVisits(Set<Visit> visits) {
-		this.visits = visits;
-	}
-	
-	
 	
 	
 	
